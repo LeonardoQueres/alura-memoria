@@ -1,16 +1,16 @@
 ﻿using UsuarioLib;
 
 Usuario usuario = 
-    new Usuario(
+    new(
         "Daniel", 
         "daniel@email.com",
-        new List<string>() {"12345678"});
+        ["12345678"]);
 
 Usuario usuario2 =
-    new Usuario(
+    new(
         "Luis",
         "luis@email.com",
-        new List<string>() { "87654321" });
+        ["87654321"]);
 
 
 //12345678

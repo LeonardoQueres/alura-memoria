@@ -19,11 +19,11 @@ public class Usuario
 
     public void PadronizaTelefones()
     {
-        Telefones = Telefones.Select(telefone =>
+        Telefones = [.. Telefones.Select(telefone =>
             telefone.Length == 8 ?
             telefone = "9" + telefone :
             telefone
-        ).ToList();
+        )];
     }
 
     public void ExibeTelefones()
