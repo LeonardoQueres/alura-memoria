@@ -2,17 +2,10 @@
 
 namespace UsuarioLib;
 
-public class Coordenada
+public class Coordenada(double latitude, double longitude)
 {
-
-    public Coordenada(double latitude, double longitude)
-    {
-        Latitude = latitude;
-        Longitude = longitude;
-    }
-
-    public double Latitude;
-    public double Longitude;
+    public double Latitude = latitude;
+    public double Longitude = longitude;
 
 
     public override string ToString()

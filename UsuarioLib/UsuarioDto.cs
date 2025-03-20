@@ -1,15 +1,8 @@
 ﻿namespace UsuarioLib;
 
-public class UsuarioDto
+public class UsuarioDto(string nome, string email, List<string> telefones)
 {
-    public UsuarioDto(string nome, string email, List<string> telefones)
-    {
-        Nome = nome;
-        Email = email;
-        Telefones = telefones;
-    }
-
-    public string Nome { get; set; }
-    public string Email { get; set; }
-    public List<string> Telefones { get; set; }
+    public string Nome { get; set; } = nome;
+    public string Email { get; set; } = email;
+    public List<string> Telefones { get; set; } = telefones;
 }
