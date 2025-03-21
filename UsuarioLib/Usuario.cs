@@ -10,6 +10,7 @@ public class Usuario
         Nome = nome;
         Email = email;
         Telefones = telefone;
+
         ChaveDeAcesso = [.. new Guid[10]];
         Stopwatch stopwatch = new();
         stopwatch.Start();
