@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿using System.Collections;
+using System.Collections.Specialized;
+using System.Diagnostics;
 
 namespace UsuarioLib;
 
@@ -29,10 +31,25 @@ public class Usuario
         Console.WriteLine("Inicio da execução LinkedList");
         for (int i = 0; i < 1000000; i++)
         {
-            ChaveDeAcessoLinkedList.AddAfter(ChaveDeAcessoLinkedList.First, Guid.NewGuid());
+            ChaveDeAcessoLinkedList.AddAfter(ChaveDeAcessoLinkedList.First!, Guid.NewGuid());
         }
         stopwatchLinkedList.Stop();
         Console.WriteLine($"Tempo Total LinkedList em ms: {stopwatchLinkedList.Elapsed.TotalMilliseconds}");
+
+        ListDictionary = new ListDictionary();
+        Stopwatch stopwatchlistDictionary = new();
+        stopwatchlistDictionary.Start();
+        for (int i = 0; i < 100; i++)
+        {
+            ListDictionary.Add(Guid.NewGuid(), i);
+        }
+        stopwatchlistDictionary.Stop();
+        Console.WriteLine($"Tempo Total ListDictionary em ms: {stopwatchlistDictionary.Elapsed.TotalMilliseconds}");
+        foreach (DictionaryEntry i in ListDictionary)
+        {
+            Console.WriteLine("Key: " + i.Key + " , " + "Value: "
+                              + i.Value);
+        }
     }
 
     public int Id { get; set; }
@@ -41,6 +58,7 @@ public class Usuario
     public List<string> Telefones { get; set; }
     public List<Guid> ChaveDeAcesso { get; set; }
     public LinkedList<Guid> ChaveDeAcessoLinkedList { get; set; }
+    public ListDictionary ListDictionary { get; set; }
 
     public void PadronizaTelefones()
     {
